@@ -1,0 +1,63 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    <Dialog id="formDialog" title="Add" afterClose="onDialogClose" stretch="false" class="sapUiResponsivePadding--header sapUiResponsivePadding--content sapUiResponsivePadding--footer" draggable="true" resizable="true">
+        <VBox>
+            <HBox justifyContent="SpaceBetween" alignItems="Center">
+                <Title text="New Product" />
+                <Image src="../assets/product.png" class="customIcon" />
+            </HBox>
+            <HBox class="sapUiSmallMarginBottom">
+                <Label text="ID" labelFor="idInput" width="100px"/>
+                <Input id="idInput" type="Text"  width="100%"/>
+            </HBox>
+            <HBox class="sapUiSmallMarginBottom">
+                <Label text="Name" labelFor="nameInput" width="100px"/>
+                <Input id="nameInput" type="Text"  width="100%"/>
+            </HBox>
+            <HBox class="sapUiSmallMarginBottom">
+                <Label text="Brand" labelFor="brandInput" width="100px"/>
+                <Input id="brandInput" type="Text"  width="100%"/>
+            </HBox>
+            <HBox class="sapUiSmallMarginBottom">
+                <Label text="Price" labelFor="priceInput" width="100px"/>
+                <Input id="priceInput" type="Number"  width="100%"/>
+            </HBox>
+          
+            <HBox class="sapUiSmallMarginBottom">
+                <Label text="Discount" labelFor="discountInput" width="100px"/>
+                <Input id="discountInput" type="Number" width="100%"/>
+            </HBox>
+            <HBox class="sapUiSmallMarginBottom">
+                <Label text="Ratings" labelFor="ratingsInput" width="100px"/>
+                <Input id="ratingsInput" type="Number"  width="100%"/>
+            </HBox>
+              <HBox class="sapUiSmallMarginBottom">
+                <Label text="Currency" width="100px"/>
+                <RadioButtonGroup id="rbg1" selectedIndex="{view1>/Index}" columns="5" valueState="Warning" >
+                    <RadioButton id="RB3-1" text="USD" />
+                    <RadioButton id="RB3-2" text="INR" />
+                    <RadioButton id="RB3-3" text="EUR" />
+                </RadioButtonGroup>
+            </HBox>
+          
+                 <HBox class="sapUiSmallMarginBottom">
+                <Label text="Color" width="100px"/>
+                <Select selectedKey="{view1>/selectedColor}" >
+                    <core:Item key="White" text="Select" />
+                    <core:Item key="Black" text="Black" />
+                    <core:Item key="Blue" text="Blue" />
+                    <core:Item key="Grey" text="Grey" />
+                    <core:Item key="Silver" text="Silver" />
+                   
+                </Select>
+            </HBox>
+              <HBox class="sapUiSmallMarginBottom">
+                <CheckBox id="deliveryCheckBox" text="Free Delivery" selected="{view1>/freedelivery}" />
+                </HBox>
+            
+             <HBox justifyContent="End">
+                <Button text="Submit" type="Accept" press="onSubmitPress" class="sapUiTinyMarginEnd"/>
+                 <Button text="Cancel" type="Reject" press="onCancelPress"/>
+            </HBox>
+        </VBox>
+    </Dialog>
+</core:FragmentDefinition>

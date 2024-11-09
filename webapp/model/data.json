@@ -1,0 +1,200 @@
+{
+    "Products" : [
+    {
+    "id": "101",
+    "name": "laptop",
+    "brand": "Lenovo",
+    "price" : "100000",
+    "priceUnit": "USD",
+    "discountPercentage": "30",
+    "ratings":"4",
+    "color" : "Black",
+    "selected": true
+},
+{
+    "id": "102",
+    "name": "iPhone 9",
+    "brand": "Apple",
+    "price" : "15000",
+    "priceUnit": "USD",
+    "discountPercentage": "40",
+    "ratings":"4.5",
+    "color" : "White",
+    "selected":false
+},
+{
+    "id": "103",
+    "name": "laptop",
+    "brand": "Lenovo",
+    "price" : "70000",
+    "priceUnit": "USD",
+    "discountPercentage": "20",
+    
+    "ratings":"3.5",
+    "color" : "Grey",
+    "selected": true
+},
+{
+    "id": "104",
+    "name": "Phone",
+    "brand": "Vivo",
+    "price" : "20000",
+    "priceUnit": "USD",
+    "discountPercentage": "10",
+    
+    "ratings":"4",
+    "color" : "Blue",
+    "selected": true
+},
+
+{
+    "id": "105",
+    "name": "Phone",
+    "brand": "Vivo",
+    "price" : "10000",
+    "priceUnit": "USD",
+"discountPercentage": "50",
+    
+    "ratings":"4",
+    "color" : "Blue",
+    "selected": true
+},
+
+{
+    "id": "106",
+    "name": "Laptop",
+    "brand": "Lenovo",
+    "price" : "15000",
+    "priceUnit": "INR",
+    "discountPercentage": "25",
+    
+    "ratings":"5",
+    "color" : "Silver",
+    "selected": true
+},
+{
+    "id": "107",
+    "name": "Laptop",
+    "brand": "HP",
+    "price" : "25000",
+    "priceUnit": "USD",
+    "discountPercentage": "40",
+    
+    "ratings":"4.5",
+    "color" : "Black",
+    "selected": false
+},
+{
+    "id": "108",
+    "name": "Phone",
+    "brand": "Vivo",
+    "price" : "25000",
+    "priceUnit": "USD",
+    "discountPercentage": "30", 
+    "ratings":"3.7",
+    "color" : "Black",
+    "selected": false
+},
+{
+    "id": "109",
+    "name": "Phone",
+    "brand": "Vivo",
+    "price" : "25500",
+    "priceUnit": "USD",
+    "discountPercentage": "45", 
+    "ratings":"4.5",
+    "color" : "Blue",
+    "selected": true
+},
+{
+    "id": "110",
+    "name": "Laptop",
+    "brand": "Lenovo",
+    "price" : "33000",
+    "priceUnit": "INR",
+   "discountPercentage": "10",
+    
+    "ratings":"3.8",
+    "color" : "Black",
+    "selected": false
+},
+{
+    "id": "111",
+    "name": "Phone",
+    "brand": "Vivo",
+    "price" : "15000",
+    "priceUnit": "USD",
+    "discountPercentage": "20",
+    
+    "ratings":"4",
+    "color" : "Blue",
+    "selected": false
+},
+{
+    "id": "112",
+    "name": "Phone",
+    "brand": "Vivo",
+    "price" : "25000",
+    "priceUnit": "INR",
+    "discountPercentage": "30", 
+    "ratings":"4.5",
+    "color" : "Blue",
+    "selected": true
+},
+{
+    "id": "113",
+    "name": "Phone",
+    "brand": "Apple",
+    "price" : "25500",
+    "priceUnit": "INR",
+    "discountPercentage": "10", 
+    "ratings":"4.5",
+    "color" : "grey",
+    "selected": true
+},
+{
+    "id": "114",
+    "name": "Laptop",
+    "brand": "Asus",
+    "price" : "25000",
+    "priceUnit": "INR",
+    "discountPercentage": "20", 
+    "ratings":"4.5",
+    "color" : "Black",
+    "selected": true
+},
+{
+    "id": "115",
+    "name": "Laptop",
+    "brand": "HP",
+    "price" : "35000",
+    "priceUnit": "INR",
+    "discountPercentage": "10", 
+    "ratings":"4",
+    "color" : "Silver",
+    "selected": true
+},
+{
+    "id": "116",
+    "name": "Phone",
+    "brand": "Vivo",
+    "price" : "23000",
+    "priceUnit": "INR",
+    "discountPercentage": "10", 
+    "ratings":"3",
+    "color" : "Blue",
+    "selected": true
+},
+{
+    "id": "117",
+    "name": "Laptop",
+    "brand": "HP",
+    "price" : "25000",
+    "priceUnit": "INR",
+    "discountPercentage": "10", 
+    "ratings":"4",
+    "color" : "Silver",
+    "selected": true
+}
+    ]
+}

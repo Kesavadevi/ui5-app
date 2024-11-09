@@ -1,0 +1,134 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:m="sap.m"
+    xmlns:uxap="sap.uxap"
+    xmlns:form="sap.ui.layout.form"
+    controllerName="project2.controller.View2">
+    
+    <uxap:ObjectPageLayout id="ObjectPageLayout" showHeaderContent="true" subSectionLayout="TitleOnTop" showFooter="false">
+        <uxap:headerTitle>
+            <uxap:ObjectPageDynamicHeaderTitle>
+                <uxap:expandedHeading>
+                 <m:FlexBox fitContainer="true" alignItems="Center">
+                        <m:Avatar src="../assets/kaar_tech_logo.jpeg" displaySize="L"/>
+                   
+                    <m:Title text="Product Name: {selectedProduct>/name}" wrapping="true"/>
+                     </m:FlexBox>
+                </uxap:expandedHeading>
+
+                <uxap:snappedHeading>
+                 <m:FlexBox fitContainer="true" alignItems="Center">
+                        <m:Avatar src="../assets/kaar_tech_logo.jpeg" class="sapUiTinyMarginEnd"/>
+                   
+                    <m:Title text="Product Name: {selectedProduct>/name}" wrapping="true"/>
+                     </m:FlexBox>
+                   
+                </uxap:snappedHeading>
+
+                <uxap:expandedContent>
+                    <m:Text text="Product ID :{selectedProduct>/id}"/>
+                </uxap:expandedContent>
+
+                <uxap:snappedContent>
+                 <m:Text text="Product ID :{selectedProduct>/id}"/>
+                   
+                </uxap:snappedContent>
+
+                <uxap:snappedTitleOnMobile>
+                  
+                    <m:Title text="Product Name: {selectedProduct>/name}" wrapping="true"/>
+                  
+                </uxap:snappedTitleOnMobile>
+
+                <uxap:actions>
+                    <m:Button  text="Edit" type="Emphasized" icon="sap-icon://edit"  press="onEditPress"/>
+                    <m:Button text="Back" type="Emphasized"  icon="sap-icon://nav-back" press="onBack"/>
+                   
+                </uxap:actions>
+            </uxap:ObjectPageDynamicHeaderTitle>
+        </uxap:headerTitle>
+
+        <uxap:sections>
+            <uxap:ObjectPageSection title="Product Information">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection>
+                        <uxap:blocks>
+                            <form:SimpleForm
+                                id="SimpleForm1"  layout="ColumnLayout">
+
+                                <form:content>
+                                    <m:Label text="Product Name"/>
+                                    <m:Input id="inputProductId" value="{selectedProduct>/name}" editable="false"/>
+                                    <m:Label text="Free Delivery"/>
+                                     <m:CheckBox id="inputfreedel" selected="{selectedProduct>/selected}" editable="false" />
+                                </form:content>
+                            </form:SimpleForm>
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+            
+            <uxap:ObjectPageSection title="Brand and Ratings">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection>
+                        <uxap:blocks>
+                            <form:SimpleForm
+                                id="SimpleForm2"
+                                
+                                layout="ColumnLayout">
+                                <form:content>
+                                    <m:Label text="Brand"/>
+                                    <m:Input id="inputBrand" value="{selectedProduct>/brand}" editable="false"/>
+                                    <m:Label text="Ratings"/>
+                                    <m:RatingIndicator  
+                                     value="{selectedProduct>/ratings}"
+        id="inputRatings"
+        maxValue="5"
+        iconSize="2rem"
+        visualMode="Half"
+        editable="false" />
+       
+                                </form:content>
+                            </form:SimpleForm>
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+            
+            <uxap:ObjectPageSection title="Discount and Color">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection>
+                        <uxap:blocks>
+                            <form:SimpleForm
+                                id="SimpleForm3"
+                                
+                                layout="ColumnLayout">
+
+                                <form:content>
+                                    <m:Label text="Discount"/>
+                                    <m:Input id="inputDiscount" value="{selectedProduct>/discountPercentage}" editable="false"/>
+                                    
+                                    <m:Label text="Color"/>
+                                    <m:Input id="inputColor" value="{selectedProduct>/color}" editable="false"/>
+                                </form:content>
+                            </form:SimpleForm>
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+        </uxap:sections>
+        
+        <uxap:footer>
+        <m:OverflowToolbar >
+            <m:Button icon="sap-icon://message-popup"
+                    text="Save the Changes"
+                    type="Emphasized"
+                    />
+            <m:ToolbarSpacer/>
+            <m:Button type="Accept" text="Save" press="onSave"/>
+            <m:Button type="Reject" text="cancel" press="onCancel"/>
+        </m:OverflowToolbar>
+    </uxap:footer>
+     
+    </uxap:ObjectPageLayout>
+</mvc:View>

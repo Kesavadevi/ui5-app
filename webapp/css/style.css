@@ -1,0 +1,11 @@
+/* Enter your custom styles here */
+.customIcon {
+    height: 70px; 
+    width: auto; 
+} 
+
+.centeredToolbar {
+    padding-left: 50%; 
+    padding-right: 50%; 
+    font-size: larger;
+}

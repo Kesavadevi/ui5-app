@@ -1,0 +1,194 @@
+<mvc:View
+    controllerName="project2.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:layout="sap.ui.layout"
+    xmlns:core="sap.ui.core"
+    xmlns:fb="sap.ui.comp.filterbar"
+    height="100%"
+    xmlns:svm="sap.ui.comp.smartvariants"  
+    >
+    
+
+    <f:DynamicPage id="dynamicPageId" headerExpanded="true" toggleHeaderOnTitleClick="true" class="sapUiResponsiveContentPadding">
+        <f:title>
+            <f:DynamicPageTitle>
+                <f:heading>
+                    <HBox justifyContent="Center" alignItems="Center">
+                        <Avatar initials="JD" displaySize="L" src="../assets/kaar_tech_logo.jpeg" decorative="false" />
+                    </HBox>
+                  
+                </f:heading>
+                <f:expandedContent>
+                <VBox>
+                            <Title
+                                text="Products Warehouse Location"  />
+                            <Text text="City : Chennai"/>
+                            <Text text="Place : Anna nagar"/>
+                            <Text text="Pin Code : 234565"/>
+                          </VBox>
+                        </f:expandedContent>
+                        <f:snappedContent>
+                        <VBox>
+                            <Title
+                                text="Products Warehouse Location"  />
+                            <Text text="City : Chennai"/>
+                            <Text text="Place : Anna nagar"/>
+                            <Text text="Pin Code : 234565"/>
+                          </VBox>
+                        </f:snappedContent>
+                <f:content>
+                    <OverflowToolbar class="centeredToolbar">
+                    <ToolbarSpacer />
+                   
+                        <Title text="Warehouse Management Application" />
+                        
+                    </OverflowToolbar>
+                </f:content>
+            </f:DynamicPageTitle>
+        </f:title>
+
+       	<f:header>
+				<f:DynamicPageHeader>
+					<f:content>
+                    
+						<fb:FilterBar id="filterbar"  useToolbar="false" search=".onSearch"  >
+							<fb:filterGroupItems>
+								<fb:FilterGroupItem name="AllSearch" label="All Search" groupName="Group1" visibleInFilterBar="true">
+									<fb:control>
+										<MultiInput
+											
+                                            id="All"
+											
+											suggestionItems="{
+												path: 'productsModel>/Products',
+												sorter:{
+                                                path : 'productsModel>id'},
+                                                templateShareable:true
+											}"
+                                            valueHelpRequest="searchall"
+										>
+                                         <!-- not use -->
+											<core:Item key="{productsModel>id}" text="{productsModel>id}"/> 
+                                         
+										</MultiInput>
+									</fb:control>
+								</fb:FilterGroupItem>
+								<fb:FilterGroupItem name="brand" label="Brand" groupName="Group1" visibleInFilterBar="true">
+									<fb:control>
+										<MultiInput
+											
+											id="brandfilter"
+											suggestionItems="{
+												path: 'BrandModel>/Brands',
+                                                templateShareable:true
+											}"
+                                            valueHelpRequest="onbrandSearch"
+										>
+											<core:Item key="{BrandModel>/brand}" text="{BrandModel>/brand}"/>
+										</MultiInput>
+									</fb:control>
+								</fb:FilterGroupItem>
+								<fb:FilterGroupItem name="color" label="color" groupName="Group1" visibleInFilterBar="true">
+									<fb:control>
+										<MultiComboBox
+											name="color"
+											selectionChange=".onSelectionChange"
+											items="{
+												path: 'colorModel>/colors',
+												
+                                                templateShareable:true
+											}"
+										>
+											<core:Item key="{colorModel>}" text="{colorModel>}"/>
+										</MultiComboBox>
+									</fb:control>
+								</fb:FilterGroupItem>
+							</fb:filterGroupItems>
+						</fb:FilterBar>
+					</f:content>
+                  
+				</f:DynamicPageHeader>
+			</f:header>
+
+        <f:content>
+    
+                <Table id="idProductsTable"
+                       sticky="HeaderToolbar,ColumnHeaders"
+                       inset="false"
+                       items="{ path: 'productsModel>/Products', sorter: { path: 'productsModel>id' }}"
+                       mode="MultiSelect"
+                       class="sapUiResponsiveMargin"
+                       width="auto"
+                       selectionChange="onSelectionChange">
+                    <headerToolbar>
+                        <Toolbar>
+                            <Title text="Products"/>
+                            <ToolbarSpacer />
+                    <Button text="New Product" type="Emphasized" press="onopenForm" icon="sap-icon://cart-4" />
+                    <Button text="Delete Products" type="Emphasized" press="onDeletePress" icon="sap-icon://cart-2" />
+                    <Button type="Emphasized" text="Download as Excel"  icon="sap-icon://excel-attachment" press="onDownloadExcel" />
+                        </Toolbar>
+                    </headerToolbar>
+
+                    <columns>
+                        <Column width="12em">
+                            <Text text="Id" />
+                        </Column>
+                        <Column minScreenWidth="Tablet" demandPopin="true">
+                            <Text text="Product" />
+                        </Column>
+                        <Column minScreenWidth="Tablet" demandPopin="true">
+                            <Text text="Brand" />
+                        </Column>
+                        <Column minScreenWidth="Tablet" demandPopin="true">
+                            <Text text="Price" />
+                        </Column>
+                        <Column minScreenWidth="Tablet" demandPopin="true">
+                            <Text text="PriceUnit" />
+                        </Column>
+                        <Column minScreenWidth="Tablet" demandPopin="true">
+                            <Text text="Discount Percentage" />
+                        </Column>
+                        <Column minScreenWidth="Tablet" demandPopin="true">
+                            <Text text="Ratings" />
+                        </Column>
+                        <Column minScreenWidth="Tablet" demandPopin="true">
+                            <Text text="Color" />
+                        </Column>
+                        <Column minScreenWidth="Tablet" demandPopin="true">
+                            <Text text="Free Delivery" />
+                        </Column>
+                    </columns>
+
+                    <items>
+                        <ColumnListItem press="onRowPress" type="Navigation">
+                            <cells>
+                                <Text text="{productsModel>id}"/>
+                                <Text text="{productsModel>name}"/>
+                                <Text text="{productsModel>brand}"/>
+                                <Text text="{productsModel>price}"/>
+                                <Text text="{productsModel>priceUnit}" />
+                                <VBox>
+                                    <ProgressIndicator
+                                        id="progressIndicator"
+                                        percentValue="{productsModel>discountPercentage}"
+                                        displayValue="{productsModel>discountPercentage}%"
+                                        width="100%" />
+                                </VBox>
+                                <RatingIndicator
+                                    value="{productsModel>ratings}"
+                                    maxValue="5"
+                                    iconSize="1rem"
+                                    visualMode="Half"
+                                    editable="false" />
+                                <Text text="{productsModel>color}"/>
+                                <CheckBox selected="{productsModel>selected}" editable="false" />
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+        </f:content>
+    </f:DynamicPage>
+</mvc:View>
